@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./production.db"
+}
+
+model Competition {
+  id        String   @id
+  updatedAt DateTime @map("updated_at")
+
+  @@map("competition")
+}

@@ -1,0 +1,45 @@
+{
+  "name": "priem-mirea-competition-bot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Nikita Koshelenko <nikitakoschelenko@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "dev": "concurrently \"yarn build:watch\" \"yarn start:watch\"",
+    "build": "swc src -d dist",
+    "build:watch": "swc src -w --out-dir dist",
+    "start": "node dist/main",
+    "start:watch": "nodemon --watch \"dist/**/*\" -e js ./dist/main.js",
+    "start:prod": "NODE_ENV=production node dist/main",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "common-tags": "^1.8.2",
+    "cron": "^3.1.7",
+    "dotenv": "^16.4.5",
+    "grammy": "^1.27.0",
+    "undici": "^6.19.4",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.2.3",
+    "@swc/core": "^1.4.8",
+    "@types/common-tags": "^1.8.4",
+    "@types/node": "^20.14.12",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-perfectionist": "^3.0.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "prisma": "^5.17.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
