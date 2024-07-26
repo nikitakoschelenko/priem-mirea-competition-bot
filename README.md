@@ -20,7 +20,6 @@ docker build -t priem-mirea-competition-bot .
 ### Run
 ```bash
 docker run -d \
-  -v ./prisma/production.db:/app/prisma/production.db \
   -e TELEGRAM_TOKEN=1234567890:abcdefghijklmnopqrstuvwxyz \
   -e TELEGRAM_CHAT_ID=123456789 \
   -e API_BASE_URL=https://priem.mirea.ru/competitions_api \
