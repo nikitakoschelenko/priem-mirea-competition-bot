@@ -1,16 +1,23 @@
 # priem-mirea-competition-bot
+Бот для отслеживания конкурсных списков РТУ МИРЭА
 
-## Clone repository
+## Подробности
+При запуске бота в env'ы указываются ID конкурсов, которые требуется отслеживать, а также персональный номер (СНИЛС) участника.
+
+С помощью команды `/start` можно получить состояние списков и свои позиции в удобном формате. Каждые 10 минут бот проверяет списки на обновления, в случае изменений актуальная информация будет отправлена в указанный чат.
+
+## Установка
+### Clone repository
 ```bash
 git clone https://github.com/nikitakoschelenko/priem-mirea-competition-bot.git
 ```
 
-## Build image
+### Build image
 ```bash
 docker build -t priem-mirea-competition-bot .
 ```
 
-## Run
+### Run
 ```bash
 docker run -d \
   -v ./prisma/production.db:/app/prisma/production.db \
