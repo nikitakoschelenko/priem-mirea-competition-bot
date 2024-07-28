@@ -9,7 +9,8 @@ export function mapCompetitionToText(competition: CompetitionEntrants) {
 
     актуально на \`${new Date(competition.updated_at).toLocaleString('ru', { timeZone: 'Europe/Moscow' })}\`
 
-    \`${competition.app_count}\` мест / \`${competition.app_original_count}\` оригиналов / \`${competition.min_score}\` баллов текущий проходной
+    \`${competition.plan}\` мест
+    \`${competition.app_count}\` подавших документы / \`${competition.app_original_count}\` оригиналов / \`${competition.min_score}\` баллов текущий проходной
   `
 
   return text
